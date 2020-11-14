@@ -24,3 +24,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+############################################Start Added By Shari############################################
+Auth::routes(['register' => false]);
+Route::get('dashboard', 'App\Http\Controllers\UserController@dashboard')->middleware('auth');
+############################################End Added By Shari##############################################
